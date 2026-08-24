@@ -517,7 +517,7 @@ async function ensureDefaultAdmin(){
   const snap = await db.collection('admins').limit(1).get();
   if(snap.empty){
     const salt = randomSalt();
-    const passwordHash = await hashPassword('Ahmed99123', salt);
+    const passwordHash = await hashPassword('Ahmed99123AA', salt);
     const fullPerms = {}; PERMISSIONS.forEach(p=> fullPerms[p.key]=true);
     await db.collection('admins').add({username:'Abo Yazan@', passwordHash, salt, title:'المشرف العام', root:true, permissions:fullPerms, createdAt:Date.now()});
   }
